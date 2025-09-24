@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta author="Neo Simmerling">
+    <title>Hallöle</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Einfache Navbar oben */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            background-color: #222;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: lightblue;
+        }
+        body {
+            background-color: black;
+            color: white;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation oben -->
+    <nav>
+        <a href="https://www.kfa-rhoen-rennsteig.de" target="_blank" rel="noopener noreferrer">KFA</a>
+        <a href="seite2.html" accesskey="2" title="Springt zu Seite 2">Seite 2</a>
+        <a href="seite2.html#p2-kap1">Kapitel 1</a>
+        <a href="seite2.html#p2-kap2">Kapitel 2</a>
+        <a href="seite2.html#p2-kap-new">Neues Kapitel</a>
+    </nav>
+
+    <h1>Hallo PI23</h1>
+    <h2 id="p1-content-dhge">Inhalte aus der Vorlesung:</h2>
+    <ul>
+        <li>Metadaten
+            <ul>
+                <li>http-equiv</li>
+                <li>name</li>
+                <li>author</li>
+            </ul>
+        </li>
+        <li>Links
+            <ul>
+                <li>target</li>
+                <li>accesskey</li>
+                <li>contenteditable</li>
+                <li>title</li>
+                <li>Sprung zu bestimmer ID mit #</li>
+                <li>Sprung nach oben mit #top</li>
+                <li>Unterseiten</li>
+            </ul>
+        </li>
+        <li>Textformatierung
+            <ul>
+                <li>br</li>
+                <li>shy</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Übungen</h2>
+    <p>Ein bisschen Text, der zeigt, wie Zeilen&shy;umbrüche funktio&shy;nieren. Noch ein bisschen mehr, dann wird es besser sichtbar...</p>
+</body>
+</html>
