@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta author="Neo Simmerling">
+    <title>Hallöle</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            background-color: black;
+            color: white;
+        }
+        /* Sidebar */
+        nav {
+            display: flex;
+            flex-direction: column;
+            background-color: #222;
+            padding: 1rem;
+            min-width: 150px;
+            height: 100vh;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0.5rem 0;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: lightblue;
+        }
+        main {
+            padding: 1rem;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation links als Sidebar -->
+    <nav>
+        <a href="https://www.kfa-rhoen-rennsteig.de" target="_blank" rel="noopener noreferrer">KFA</a>
+        <a href="seite2.html" accesskey="2" title="Springt zu Seite 2">Seite 2</a>
+        <a href="seite2.html#p2-kap1">Kapitel 1</a>
+        <a href="seite2.html#p2-kap2">Kapitel 2</a>
+        <a href="seite2.html#p2-kap-new">Neues Kapitel</a>
+    </nav>
+
+    <main>
+        <h1>Hallo PI23</h1>
+        <h2 id="p1-content-dhge">Inhalte aus der Vorlesung:</h2>
+        <ul>
+            <li>Metadaten
+                <ul>
+                    <li>http-equiv</li>
+                    <li>name</li>
+                    <li>author</li>
+                </ul>
+            </li>
+            <li>Links
+                <ul>
+                    <li>target</li>
+                    <li>accesskey</li>
+                    <li>contenteditable</li>
+                    <li>title</li>
+                    <li>Sprung zu bestimmer ID mit #</li>
+                    <li>Sprung nach oben mit #top</li>
+                    <li>Unterseiten</li>
+                </ul>
+            </li>
+            <li>Textformatierung
+                <ul>
+                    <li>br</li>
+                    <li>shy</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Übungen</h2>
+        <p>Ein bisschen Text, der zeigt, wie Zeilen&shy;umbrüche funktio&shy;nieren...</p>
+    </main>
+</body>
+</html>
