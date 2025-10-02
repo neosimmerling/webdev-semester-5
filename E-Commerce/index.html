@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeoStore - Demo Shop</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <!-- Header -->
+  <header class="bg-white shadow">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <h1 class="text-xl font-semibold">NeoStore</h1>
+      <button id="toggleCart" class="relative px-3 py-2 border rounded shadow-sm bg-white hover:bg-gray-50">
+        🛒 <span class="ml-2">Warenkorb</span>
+        <span id="cartCount" class="hidden absolute -top-1 -right-2 px-2 py-1 text-xs font-bold text-white bg-red-600 rounded-full">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-6xl mx-auto px-4 py-8">
+    <div class="rounded-lg bg-gradient-to-r from-indigo-600 to-indigo-400 text-white p-6 mb-6">
+      <h2 class="text-2xl font-bold">Design. Qualität. Nachhaltig.</h2>
+      <p class="mt-1 text-sm opacity-90">Kostenloser Versand ab 100€ • 14 Tage Rückgabe • Demo-Shop</p>
+    </div>
+
+    <!-- Products -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Produkte</h3>
+      <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+  </main>
+
+  <!-- Cart Drawer -->
+  <div id="cartDrawer" class="fixed inset-0 z-40 hidden">
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-full sm:w-96 bg-white shadow-xl p-4 overflow-auto">
+      <div class="flex items-center justify-between">
+        <h2 class="text-lg font-semibold">Warenkorb</h2>
+        <button id="closeCart" class="text-sm text-gray-500">Schließen</button>
+      </div>
+      <div id="cartItems" class="mt-4"></div>
+      <div id="cartSummary" class="border-t pt-4 hidden"></div>
+    </div>
+  </div>
+
+  <footer class="mt-12 bg-white border-t">
+    <div class="max-w-6xl mx-auto px-4 py-6 text-sm text-gray-600">
+      © <span id="year"></span> NeoStore — Demo-Shop. Nicht für Produktion.
+    </div>
+  </footer>
+
+<script>
+const products = [
+  {id:"p1", title:"Minimal Leather Wallet", price:39.0, desc:"Handmade slim leather wallet.", img:"https://picsum.photos/seed/wallet/400/300", stock:12},
+  {id:"p2", title:"Ceramic Coffee Mug (350ml)", price:18.5, desc:"Dishwasher safe mug.", img:"https://picsum.photos/seed/mug/400/300", stock:24},
+  {id:"p3", title:"Noise-Isolating Headphones", price:129.99, desc:"20h battery, USB-C charging.", img:"https://picsum.photos/seed/headphones/400/300", stock:6},
+  {id:"p4", title:"Organic Cotton T-Shirt", price:25.0, desc:"Soft, pre-shrunk, unisex fit.", img:"https://picsum.photos/seed/tshirt/400/300", stock:40}
+];
+
+let cart = JSON.parse(localStorage.getItem("shop_cart") || "{}");
+
+function currency(n){return n.toLocaleString("de-DE",{style:"currency",currency:"EUR"});}
+
+function renderProducts(){
+  const grid = document.getElementById("productGrid");
+  grid.innerHTML = "";
+  products.forEach(p=>{
+    const div = document.createElement("div");
+    div.className="bg-white rounded-lg shadow p-4 flex flex-col";
+    div.innerHTML=`
+      <img src="${p.img}" alt="${p.title}" class="w-full h-40 object-cover rounded" />
+      <div class="mt-3 flex-1">
+        <div class="flex justify-between items-start">
+          <h4 class="font-medium">${p.title}</h4>
+          <div class="font-semibold">${currency(p.price)}</div>
+        </div>
+        <p class="text-sm text-gray-500 mt-2">${p.desc}</p>
+      </div>
+      <div class="mt-4 flex items-center justify-between">
+        <div class="text-xs text-gray-500">${p.stock} auf Lager</div>
+        <button onclick="addToCart('${p.id}')" class="px-3 py-2 rounded bg-indigo-600 text-white text-sm">In den Warenkorb</button>
+      </div>`;
+    grid.appendChild(div);
+  });
+}
+
+function addToCart(id){
+  cart[id] = (cart[id]||0)+1;
+  saveCart();
+  updateCartCount();
+  openCart();
+}
+
+function updateCartCount(){
+  const count = Object.values(cart).reduce((a,b)=>a+b,0);
+  const badge = document.getElementById("cartCount");
+  if(count>0){badge.textContent=count;badge.classList.remove("hidden");}
+  else{badge.classList.add("hidden");}
+}
+
+function renderCart(){
+  const itemsDiv=document.getElementById("cartItems");
+  const summary=document.getElementById("cartSummary");
+  itemsDiv.innerHTML="";
+  let subtotal=0;
+  for(const [id,qty] of Object.entries(cart)){
+    const p=products.find(x=>x.id===id);
+    subtotal+=p.price*qty;
+    const row=document.createElement("div");
+    row.className="flex items-center gap-3 mb-2";
+    row.innerHTML=`
+      <img src="${p.img}" class="w-16 h-12 object-cover rounded" />
+      <div class="flex-1">
+        <div class="font-medium">${p.title}</div>
+        <div class="text-sm text-gray-500">${currency(p.price)} × ${qty}</div>
+      </div>
+      <button onclick=\"removeFromCart('${id}')\" class="px-2 py-1 border rounded">✕</button>`;
+    itemsDiv.appendChild(row);
+  }
+  if(subtotal===0){summary.classList.add("hidden");itemsDiv.innerHTML='<div class="text-center text-gray-600 py-12">Dein Warenkorb ist leer.</div>';return;}
+  const shipping=subtotal>100?0:4.99;
+  const tax=+(subtotal*0.19).toFixed(2);
+  const total=+(subtotal+shipping+tax).toFixed(2);
+  summary.classList.remove("hidden");
+  summary.innerHTML=`
+    <div class="flex justify-between text-sm"><span>Zwischensumme</span><span>${currency(subtotal)}</span></div>
+    <div class="flex justify-between text-sm"><span>Versand</span><span>${shipping===0?"Gratis":currency(shipping)}</span></div>
+    <div class="flex justify-between text-sm"><span>USt. (19%)</span><span>${currency(tax)}</span></div>
+    <div class="flex justify-between font-semibold text-lg mt-2"><span>Gesamt</span><span>${currency(total)}</span></div>
+    <button onclick="checkout()" class="w-full mt-3 py-2 rounded bg-green-600 text-white font-medium">Zur Kasse (Demo)</button>
+    <button onclick="clearCart()" class="w-full mt-2 py-2 rounded border">Warenkorb leeren</button>`;
+}
+
+function removeFromCart(id){delete cart[id];saveCart();renderCart();updateCartCount();}
+function clearCart(){cart={};saveCart();renderCart();updateCartCount();}
+function saveCart(){localStorage.setItem("shop_cart",JSON.stringify(cart));}
+
+function checkout(){
+  alert("Danke für deine Bestellung! (Demo-Checkout)");
+  clearCart();
+  closeCart();
+}
+
+function openCart(){document.getElementById("cartDrawer").classList.remove("hidden");renderCart();}
+function closeCart(){document.getElementById("cartDrawer").classList.add("hidden");}
+
+document.getElementById("toggleCart").onclick=openCart;
+document.getElementById("closeCart").onclick=closeCart;
+document.getElementById("year").textContent=new Date().getFullYear();
+
+renderProducts();
+updateCartCount();
+</script>
+</body>
+</html>
