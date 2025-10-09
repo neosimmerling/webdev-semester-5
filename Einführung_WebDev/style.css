@@ -56,6 +56,11 @@ b {
     transition: color 0.2s ease;
 }
 
+.black2white {
+    transition: color 0.2s ease;
+    color: black;
+}
+
 h2:hover {
     color:deeppink;
 }
@@ -79,6 +84,10 @@ a:hover {
 
 .rgb-color3:hover {
     color: rgb(60%,20%,40%);
+}
+
+.black2white:hover {
+    color: rgb(255,255,255);
 }
 
 u:hover {
