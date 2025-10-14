@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta author="Neo Simmerling">
     <title>Hallöle</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/x-icon" href="img/smiley.ico" />
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="code.css"/>
+    <link rel="icon" type="image/x-icon" href="img/smiley.ico"/>
 
     <!-- style-Tag gilt nur für dieses Dokument -->
     <style>         
@@ -44,6 +45,15 @@
                 <li>Unterseiten</li>
             </ul>
         </li>
+        <li><a href="listen.html">Listen</a>
+            <ul>
+                <li><a href="listen.html#sortiert">Sortiert</a></li>
+                <li><a href="listen.html#unsortiert">Unsortiert</a></li>
+                <li><a href="listen.html#beschr">Beschreibungsliste</a></li>
+                <li><a href="listen.html#verschachtelt">verschachtelt</a></li>
+                <li><a href="listen.html#inverz">Inhaltsverzeichnis</a></li>
+            </ul>
+        </li>
         <li>Textformatierung
             <ul>
                 <li>br</li>
@@ -55,9 +65,17 @@
                 <li>css-Datei</li>
                 <li>class</li>
                 <li>Sonderzeichen</li>
+                <li>del</li>
+                <li>u</li>
+                <li>em</li>
             </ul>
         </li>
-        <li>Bilder</li>
+        <li>Bilder
+            <ul>
+                <li><a href="Image-Map.html">map</a></li>
+                <li><a href="#bilder-dhge">overlay</a></li>
+            </ul>
+        </li>
         <li>CSS
             <ul>
                 <li>border</li>
@@ -89,6 +107,8 @@
                         <li>footer --> Kontaktinformationen (Email, Telefon, Adresse)</li>
                         <p>Hier geht es zum Ergebnis: <a href="../Aufgabe-Vorstellung/about.html">Klick</a></p>
                     </ul>
+                <li>Aufgabe 3:</li>
+                    <p>Hier geht es zum Ergebnis: <a href="listen.html#aufgabe3">Klick</a></p>
             </ul>
     </ul>
     
@@ -157,10 +177,54 @@
     </ul>
 
     <h2 id="code">Code</h2>
-    <code>printf("Hello World"\n);</code>
+    <pre><code>
+        #include &lt;stdio.h&gt;
+
+        int main() {
+        printf("Hello World!");
+
+        return 0;
+        }
+    </code></pre>
     <p>...hier könnte auch ein komplettes C-Programm stehen :D</p>
 
+    <h2 id="box">Boxen</h2>
+        <div id="box-global">
+            <div id="box-eins">Erstens</div>
+            <div id="box-zwei">Zweitens</div>
+            <div id="box-drei">Drittens</div>
+            <span id="box-vier">Viertens</span>
+            <span id="box-fünf">Fünftens</span>
+            <div id="box-sechs">Sechstens</div>
+        </div>
+
+    <h2>Bilder</h2>
+    <div id="bilder-dhge">
+        <div class="bild-container">
+            <img src="img/barie.jpg" alt="hier sieht man Daniel Barié">
+            <div class="overlay">Daniel Barié</div>
+        </div>
+
+        <div class="bild-container">
+            <img src="img/grimm.jpg" alt="hier sieht man André Grimm">
+            <div class="overlay">André Grimm</div>
+        </div>
+
+        <div class="bild-container">
+            <img src="img/guenther.jpg" alt="hier sieht man Daniel Günther">
+            <div class="overlay">Daniel Günther</div>
+        </div>
+
+        <div class="bild-container">
+            <img src="img/dorendorf.jpg" alt="hier sieht man Stefan Dorendorf">
+            <div class="overlay">Stefan Dorendorf</div>
+        </div>
+    </div>
+
     <h2 id="p1-links">Nützliche Links:</h2>
+    <a href="prüfungsrelevant.html">Prüfungsrelevant</a><br>
+    <a href="Image-Map.html">Image-Map</a><br>
+    <a href="listen.html">Listen</a><br>
     <a href="../Aufgabe-Vorstellung/about.html">Übung Vorstellung</a><br>
     <a href="seite2.html" accesskey="2" title="Springt zu Seite 2">Seite 2</a><br>        <!--Aufruf Seite 2 mit Tastenkombination +2 (noch fehlerhaft)-->
         <a href="https://www.kfa-rhoen-rennsteig.de" target="_blank" rel="noopener noreferrer">KFA-Homepage</a> <br> 

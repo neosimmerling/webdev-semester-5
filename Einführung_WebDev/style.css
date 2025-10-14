@@ -94,3 +94,116 @@ u:hover {
     color: rgb(0, 251, 255);
     text-decoration: underline; 
 }
+
+#box-global {
+    text-align: center;
+}
+
+
+#box-zwei {
+    border-top: 20px ridge lightblue;
+    border-right: 20px ridge lightblue;
+    width: 70vw;
+    border-color: beige;
+}
+
+#box-drei {
+    /*width: 70%;*/
+    margin: 0 20px 10px 0;
+    margin-left: 50px;
+    padding: 10px;
+    background-color: lightseagreen;
+    width: 200px;
+    height: 80px;
+    border-color: beige;
+}
+
+#box-vier {
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(144, 238, 144, 0.527);
+    width: 200px;
+    height: 80px;
+    border-radius: 50%;
+    border-color: beige;
+}
+
+#box-fünf {
+    background-color: #ff7f50;
+    padding: 0 20px 0 20px;
+    border-color: beige;
+}
+
+#box-sechs {
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(38, 0, 255);
+    border-color: beige;
+}
+
+#bilder-dhge {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.bild-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.bild-container img {
+    width: 100%;
+    max-width: 250px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    border-radius: 12px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 12px;
+}
+
+.bild-container:hover img {
+    transform: scale(1.05);
+    filter: brightness(70%);
+}
+
+.bild-container:hover .overlay {
+    opacity: 1;
+}
+
+@media (max-width: 1024px) {
+    #bilder-dhge {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    #bilder-dhge {
+        grid-template-columns: 1fr;
+    }
+}

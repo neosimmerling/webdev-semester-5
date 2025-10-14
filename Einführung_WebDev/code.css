@@ -1,0 +1,19 @@
+pre {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 15px;
+    line-height: 1.5;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+code {
+    color: #9cdcfe;
+}
+
+pre code::selection {
+    background: #264f78;
+}

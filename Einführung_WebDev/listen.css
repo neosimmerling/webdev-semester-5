@@ -1,0 +1,39 @@
+#unsortiert1 {
+    list-style: " - ";
+}
+
+dt {
+    float: left;
+    font-weight: bold;
+    margin-right: 0.5em;
+}
+
+dt:after {
+    content: ": ";
+}
+
+h3 {
+    font-size:large;
+}
+
+.inverz1 {
+    list-style: none;
+    counter-reset: item;    /*item ist eine variable, Wert = 0*/
+    padding-left: 1.2em;
+}
+
+.inverz1 li {               /* nimmt alle li's, die unter inverz1 kommen */
+    counter-increment: item;
+    margin: 0.3em 0;
+}
+
+.inverz1 li::before {
+    content: counters(item, ".") " ";
+    font-weight: bold;
+}
+
+.inverz1 ol {
+    list-style: none;
+    counter-reset: item;
+    padding-left: 1.5em;
+}
