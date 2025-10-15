@@ -76,6 +76,14 @@
                 <li><a href="#bilder-dhge">overlay</a></li>
             </ul>
         </li>
+        <li><a href="#tables">Tabellen</a></li>
+            <ul>
+                <li>strukturierte Datensammlung</li>
+                <li>Kalender</li>
+                <li>Stundenpläne</li>
+                <li>Fahrpläne</li>
+                <li>...</li>
+            </ul>
         <li>CSS
             <ul>
                 <li>border</li>
@@ -92,8 +100,17 @@
                         <li>prozentual: <span class="rgb-color3">rgb(60%,20%,40%)</span></li>
                     </ul>
                 <li><a href="#code">Code</a></li>
+                <li><a href="mediaQueries.html">@Media-Queries</li>
+                    <ul>
+                        <li>Fullscreen</li>
+                        <li>min-width</li>
+                    </ul>
             </ul>
         </li>
+        <li>Menü</li>
+            <ul>
+                <li><a href="../apple-menü/apple-menu.html">Apple-Menü</a></li>
+            </ul>
         <li>Aufgaben</li>
             <ul>
                 <li> Aufgabe 1: Erstellen Sie eine eigene Webseite. Stellen Sie sich selbst vor.</li>
@@ -201,16 +218,6 @@
     <h2>Bilder</h2>
     <div id="bilder-dhge">
         <div class="bild-container">
-            <img src="img/barie.jpg" alt="hier sieht man Daniel Barié">
-            <div class="overlay">Daniel Barié</div>
-        </div>
-
-        <div class="bild-container">
-            <img src="img/grimm.jpg" alt="hier sieht man André Grimm">
-            <div class="overlay">André Grimm</div>
-        </div>
-
-        <div class="bild-container">
             <img src="img/guenther.jpg" alt="hier sieht man Daniel Günther">
             <div class="overlay">Daniel Günther</div>
         </div>
@@ -219,14 +226,86 @@
             <img src="img/dorendorf.jpg" alt="hier sieht man Stefan Dorendorf">
             <div class="overlay">Stefan Dorendorf</div>
         </div>
+
+        <div class="bild-container">
+            <img src="img/barie.jpg" alt="hier sieht man Daniel Barié">
+            <div class="overlay">Daniel Barié</div>
+        </div>
+
+        <div class="bild-container">
+            <img src="img/grimm.jpg" alt="hier sieht man André Grimm">
+            <div class="overlay">André Grimm</div>
+        </div>
     </div>
 
+    <h2 id="tables">Tabellen</h2>
+        <table>
+            <caption>Ich bin eine Tabelle</caption>
+            <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Vorname</th>
+                    <th scope="col">Geburtstag</th>
+                    <th scope="col">Geburtsort</th>
+                    <th scope="col">Gattung</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1.</th>
+                    <td>Simmerling</td>
+                    <td>Neo</td>
+                    <td>11.02.2005</td>
+                    <td>Suhl</td>
+                    <td>Studi</td>
+                </tr>
+                <tr>
+                    <th scope="row">2.</th>
+                    <td>Norris</td>
+                    <td>Chuck</td>
+                    <td>vor Christus</td>
+                    <td>unbekannt</td>
+                    <td>Maschine</td>
+                </tr>
+                <tr>
+                    <th scope="row">3.</th>
+                    <td>Grimm</td>
+                    <td>Andre</td>
+                    <td>12.12.1912</td>
+                    <td>Gera</td>
+                    <td>Dozent</td>
+                </tr>
+                <tr>
+                    <th scope="row">4.</th>
+                    <td>Potter</td>
+                    <td>Harry</td>
+                    <td>31.07.1980</td>
+                    <td>London</td>
+                    <td>Zauberer</td>
+                </tr>
+                <tr>
+                    <th scope="row">5.</th>
+                    <td>Arbuckle</td>
+                    <td>John</td>
+                    <td>28.07.1951</td>
+                    <td>Farm</td>
+                    <td>Mensch</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>erstellt am 15.10.2025 von NES</td>
+                </tr>
+            </tfoot>
+        </table>
+
     <h2 id="p1-links">Nützliche Links:</h2>
-    <a href="prüfungsrelevant.html">Prüfungsrelevant</a><br>
-    <a href="Image-Map.html">Image-Map</a><br>
-    <a href="listen.html">Listen</a><br>
-    <a href="../Aufgabe-Vorstellung/about.html">Übung Vorstellung</a><br>
-    <a href="seite2.html" accesskey="2" title="Springt zu Seite 2">Seite 2</a><br>        <!--Aufruf Seite 2 mit Tastenkombination +2 (noch fehlerhaft)-->
+        <a href="prüfungsrelevant.html">Prüfungsrelevant</a><br>
+        <a href="Image-Map.html">Image-Map</a><br>
+        <a href="listen.html">Listen</a><br>
+        <a href="../Aufgabe-Vorstellung/about.html">Übung Vorstellung</a><br>
+        <a href="seite2.html" accesskey="2" title="Springt zu Seite 2">Seite 2</a><br>        <!--Aufruf Seite 2 mit Tastenkombination +2 (noch fehlerhaft)-->
         <a href="https://www.kfa-rhoen-rennsteig.de" target="_blank" rel="noopener noreferrer">KFA-Homepage</a> <br> 
         <a href="https://gera.dhge.de/Stundenplan/planung/plan.php?datum=1758717251&basess=&i_plan_type=1&id1=&id2=&semid=376&navigated=1" target="_blank" rel="noopener noreferrer">PIB23-Stundenplan</a>
         <p>_________</p>

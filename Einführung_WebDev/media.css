@@ -1,0 +1,62 @@
+div {
+    border: 1px solid;
+}
+
+.navi {
+    display: none;
+}
+
+#div1 {
+    background-color: aqua;
+}
+
+#div2 {
+    background-color: red;
+}
+
+@media (min-width: 700px) {
+    main {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    div {
+        padding: 1em 3em;
+    }
+}
+
+@media (display-mode: fullscreen) {     /* Vollbild */
+    .navi {
+        display: inline;
+    }
+}
+
+@media (pointer: coarse) {              /* Touch-Screen */
+    input {
+        font-size: larger;
+        padding: 10px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {   /* Dark-Mode */
+    body {
+        background-color: rgb(20, 20, 20);
+        color: rgb(145, 145, 145);
+    }
+}
+
+@media (prefers-contrast: more) {       /* Kontrast */
+    body {
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {   /* reduzierte Bewegungen */
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+    }
+}

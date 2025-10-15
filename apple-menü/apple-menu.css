@@ -2,6 +2,12 @@ body {
     background-color: black;
     margin: 0;
     color: aliceblue;
+    overflow-x: hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header {
+    position: relative;
 }
 
 h1 {
@@ -9,17 +15,87 @@ h1 {
 }
 
 nav {
-    background-color: rgb(40, 40, 41);
+    background-color: rgb(30, 30, 30);
+    padding: 0.25em;
 }
 
 #main-menu {
     list-style: none;
     display: flex;
+    /*flex-wrap: wrap;
+    justify-content: center;*/
     color: darkgray;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0 auto;
+    width: max-content;
 }
 
 #main-menu>li {
     padding: 0.3em 1em;
-    cursor: pointer;
+    cursor: pointer;        /* beim Hovern darüber wird Cursor geändert */
+    font-size: small;
+}
+
+#main-menu>li:hover>ul {    /* > ist Kombinationsselektor / Kindkombinator */
+    visibility: visible;
+}
+
+.menu {
+    text-decoration: none;
+    color:whitesmoke;
+}
+
+.menu:hover {
+    box-shadow: 5px 0 3px rgb(62, 62, 62);
+}
+
+.sub-menu {
+    position: absolute;
+    top: 2em;
+    left: 0;
+    list-style: none;
+    visibility: hidden;
+    background-color: rgb(30,30,30);
+    margin: 0;
+    padding: 0.3em;
+    padding-left: 36.7%;
+    width: 100%;
+}
+
+.sub-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sub-menu li {
+    margin-bottom: 0.5em;
+}
+
+.subContainer {
+    display: flex;
+    margin-top: 1.75em;
+    gap: 2em;
+}
+
+.subMainHeader {
+    color: gray;
+    margin-bottom: 0.8em;
+}
+
+.subMain {
+    font-size: large;
+    font-weight: bold;
+}
+
+@media (max-width: 500px) {
+    #main-menu {
+        flex-direction: column;
+    }
+    .sub-menu {
+        position: inherit;
+        display: none;
+
+    }
+    #main-menu>li:hover>ul {
+        display: block;
+    }
 }

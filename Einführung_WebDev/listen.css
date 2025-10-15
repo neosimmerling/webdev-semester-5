@@ -1,7 +1,3 @@
-#unsortiert1 {
-    list-style: " - ";
-}
-
 dt {
     float: left;
     font-weight: bold;
@@ -36,4 +32,8 @@ h3 {
     list-style: none;
     counter-reset: item;
     padding-left: 1.5em;
+}
+
+#unsortiert1 {
+    list-style: " - ";
 }
