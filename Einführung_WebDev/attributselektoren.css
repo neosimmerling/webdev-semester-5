@@ -1,0 +1,39 @@
+/* Präsenz */
+[blah] {
+    color: white;
+}
+
+[test] {
+    color: rgb(0, 136, 255);
+}
+
+/* konkreter Wert */
+[test="liste-sql"] {
+    color: rgb(226, 198, 43);
+}
+
+/* beginnt mit und mit - getrennt */
+[test|="liste"] {
+    font-style: italic;
+}
+
+/* enthält und mit Leerzeichen getrennt*/
+[test~="html"] {        
+    font-weight: bold;
+}
+
+/* beginnt mit li */
+[test^="li"] {         
+    text-decoration: underline;
+}
+
+/* endet mit css*/
+[test$="css"] {
+    font-weight: bolder;
+}
+
+/* enthält */
+[test*="c"] {
+    font-size: x-large;
+    color: brown;
+}

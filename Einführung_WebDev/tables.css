@@ -1,0 +1,141 @@
+#tables-personen {
+    caption-side: bottom;
+    max-width: 80vw;
+    margin: 1em auto;
+}
+
+#tables-personen,
+#tables-personen td,
+#tables-personen th  {
+    border: 1px solid whitesmoke;
+    border-spacing: 3px;
+    border-collapse: separate;
+}
+
+#tables-personen td,
+#tables-personen th {
+    padding: 10px;
+}
+
+#tables-personen thead {
+    background-color: blue;
+    color: orange;
+    text-align: left;
+}
+
+#tables-personen thead th:hover {
+    color: white;
+    border-radius: 5px;
+}
+
+#tables-personen th[scope=row] {
+    color: rgb(134, 134, 134);
+}
+
+#tables-personen th[scope=row]:hover {
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+#tables-personen tbody tr:hover {
+    background-color: rgb(33, 33, 33);
+}
+
+#tables-personen tbody td {
+    box-shadow: 5px 5px 7px rgb(70, 70, 144) inset;
+}
+
+#tables-personen tbody td:hover {
+    box-shadow: 5px 5px 7px rgb(0, 0, 255) inset;
+    color: rgb(0, 17, 255);
+    border-radius: 5px;
+}
+
+#tables-personen tfoot {
+    background-color: darkblue;
+    text-align: right;
+    color: yellow;
+    font-size: smaller;
+}
+
+#tables-personen tfoot:hover {
+    background-color: rgb(0, 0, 255);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+#tables-personen tfoot td:hover {
+    border-radius: 5px;
+}
+
+#tables-personen caption {
+    text-align: left;
+}
+
+button {
+    background-color: black;
+    border: 0;
+    border-radius: 3px;
+}
+
+button a:hover {
+    text-decoration: none;
+    color: red;
+}
+
+#tables-personen tbody tr:nth-child(2n) {     /*even, odd, 2n+1, ...*/
+    font-weight: lighter;
+}
+
+@media (max-width: 1200px) {
+    #tables-personen,
+    #tables-personen td,
+    #tables-personen th {
+        border-collapse: collapse;
+    }
+
+    #tables-personen th[scope=row] {
+        background-color: blue;
+    }
+
+    #tables-personen td,
+    #tables-personen th {
+        padding: 5px;
+}
+}
+
+@media (max-width: 650px) {
+    #tables-personen tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #tables-personen thead {
+        display: none;
+    }
+
+    #tables-personen td:nth-child(2)::before {
+        content: "Name:  ";
+        font-weight: bold;
+    }
+
+    #tables-personen td:nth-child(3)::before {
+        content: "Vorname:  ";
+        font-weight: bold;
+    }
+
+    #tables-personen td:nth-child(4)::before {
+        content: "Geb-Dat.:  ";
+        font-weight: bold;
+    }
+
+    #tables-personen td:nth-child(5)::before {
+        content: "Geb-Ort:  ";
+        font-weight: bold;
+    }
+
+    #tables-personen td:nth-child(6)::before {
+        content: "Gattung:  ";
+        font-weight: bold;
+    }
+}

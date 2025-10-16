@@ -8,6 +8,8 @@
     <title>Hallöle</title>
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="code.css"/>
+    <link rel="stylesheet" href="tables.css"/>
+    <link rel="stylesheet" href="attributselektoren.css"/>
     <link rel="icon" type="image/x-icon" href="img/smiley.ico"/>
 
     <!-- style-Tag gilt nur für dieses Dokument -->
@@ -76,6 +78,7 @@
                 <li><a href="#bilder-dhge">overlay</a></li>
             </ul>
         </li>
+        <li><a href="formulare.html">Formulare</a></li>
         <li><a href="#tables">Tabellen</a></li>
             <ul>
                 <li>strukturierte Datensammlung</li>
@@ -84,6 +87,8 @@
                 <li>Fahrpläne</li>
                 <li>...</li>
             </ul>
+        <li> <a href="#attributs">Attributselektoren</a></li>
+        <li><a href="pseudoelemente.html">Pseudoelemente</a></li>
         <li>CSS
             <ul>
                 <li>border</li>
@@ -100,11 +105,12 @@
                         <li>prozentual: <span class="rgb-color3">rgb(60%,20%,40%)</span></li>
                     </ul>
                 <li><a href="#code">Code</a></li>
-                <li><a href="mediaQueries.html">@Media-Queries</li>
+                <li><a href="mediaQueries.html">@Media-Queries</a></li>
                     <ul>
                         <li>Fullscreen</li>
                         <li>min-width</li>
                     </ul>
+                <li><a href="kombinatoren.html">Kombinatoren</a></li>
             </ul>
         </li>
         <li>Menü</li>
@@ -205,16 +211,6 @@
     </code></pre>
     <p>...hier könnte auch ein komplettes C-Programm stehen :D</p>
 
-    <h2 id="box">Boxen</h2>
-        <div id="box-global">
-            <div id="box-eins">Erstens</div>
-            <div id="box-zwei">Zweitens</div>
-            <div id="box-drei">Drittens</div>
-            <span id="box-vier">Viertens</span>
-            <span id="box-fünf">Fünftens</span>
-            <div id="box-sechs">Sechstens</div>
-        </div>
-
     <h2>Bilder</h2>
     <div id="bilder-dhge">
         <div class="bild-container">
@@ -239,11 +235,11 @@
     </div>
 
     <h2 id="tables">Tabellen</h2>
-        <table>
-            <caption>Ich bin eine Tabelle</caption>
+        <table id="tables-personen">
+            <caption>Ich bin eine hässliche Tabelle</caption>
             <thead>
                 <tr>
-                    <th>&nbsp;</th>
+                    <th><button type="button"><a href="#top">↑</a></button></th> <!--&nbsp; für ein leeres Zeichen-->
                     <th scope="col">Name</th>
                     <th scope="col">Vorname</th>
                     <th scope="col">Geburtstag</th>
@@ -271,7 +267,7 @@
                 <tr>
                     <th scope="row">3.</th>
                     <td>Grimm</td>
-                    <td>Andre</td>
+                    <td>André</td>
                     <td>12.12.1912</td>
                     <td>Gera</td>
                     <td>Dozent</td>
@@ -295,10 +291,29 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td>erstellt am 15.10.2025 von NES</td>
+                    <td colspan="6">erstellt am 15.10.2025 von NES</td>
                 </tr>
             </tfoot>
         </table>
+
+    <h2 id="attributs">Attributselektoren</h2>
+        <ol>
+            <li test="liste-1 html" blah>HTML</li>
+            <li test="liste-sql">SQL</li>
+            <li test="javaSprache">Java</li>
+            <li test="liste-turbo">Turbo Pascal</li>
+            <li test="liste-css">CSS</li>
+        </ol>
+
+    <h2 id="box">Boxen</h2>
+        <div id="box-global">
+            <div id="box-eins">Erstens</div>
+            <div id="box-zwei">Zweitens</div>
+            <div id="box-drei">Drittens</div>
+            <span id="box-vier">Viertens</span>
+            <span id="box-fünf">Fünftens</span>
+            <div id="box-sechs">Sechstens</div>
+        </div>
 
     <h2 id="p1-links">Nützliche Links:</h2>
         <a href="prüfungsrelevant.html">Prüfungsrelevant</a><br>
@@ -313,6 +328,6 @@
         <a href="seite2.html#p2-kap1">Seite 2 Kapitel 1</a> <br>    <!--Sprung zu Kapitel 1, # als Tag für id's-->
         <a href="seite2.html#p2-kap2">Seite 2 Kapitel 2</a> <br>    <!--Sprung zu Kapitel 2, # als Tag für id's-->
         <a href="seite2.html#p2-kap-new">Seite 2 neues Kapitel</a> <br>
-        <br> <a href="#top" style="justify-content: center; display:flex">↑ back to top ↑</a>  <!--#top -> zurück zum Seitenanfang-->
+        <br><a href="#top" style="justify-content: center; display:flex">↑ back to top ↑</a>  <!--#top -> zurück zum Seitenanfang-->
 </body>
 </html>

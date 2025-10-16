@@ -1,0 +1,26 @@
+/* Kindkombinator */
+#mainText>em {
+    color: magenta;
+    font-style: italic;
+}
+
+/* Nachfahrenkombinator */
+#mainText em {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+/* Nachbarkombinator - nur das Element direkt danach*/
+#mainText+h2 {
+    color: rgb(0, 255, 0);
+}
+
+/* Geschwisterkombinator */
+#mainText~h2 {
+    text-shadow: 10px -5px 5px rgb(255, 0, 0);
+}
+
+/* Verbundselektor */
+h2.drinnen {
+    color: rgb(0, 208, 255);
+}

@@ -1,0 +1,16 @@
+#lorem::first-letter {
+    font-size: larger;
+    font-weight: bold;
+    font-family: Vivaldi;
+}
+
+.playwrite-de-grund-guides-regular {
+  font-family: "Playwrite DE Grund Guides", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p{
+    font-family: "Playwrite DE Grund Guides", cursive;
+    font-weight: lighter;
+}
