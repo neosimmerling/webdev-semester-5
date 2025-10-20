@@ -13,16 +13,58 @@
         <img src="img/dhge-logo-sw.png" alt="DHGE Logo" class="logo">
     </a>
     <h1 style="color:greenyellow">Formulare</h1> <br>
-        <form action="" method="get">   <!--get ist standard-->
-            <label for="user">Benutzer</label>
-            <input type="text" name="user" id="user">
 
-            <label for="user">Passwort</label>
-            <input type="password" name="pwd" id="pwd">
-
-            <input type="submit">Login</input>
+        <form action="" method="get" id="such">
+            <label for="suchfeld">Suche:</label>
+            <input type="search" size="100" id="suchfeld" list="suchwerte">
+            <datalist id="suchwerte">
+                <option value="1">Text1</option>
+                <option value="2">Text2</option>
+                <option value="3">Text3</option>
+                <option value="4">Text4</option>
+                <option value="5">Text5</option>
+            </datalist>
         </form>
 
+        <form action="" method="get" id="formular">   <!--get ist standard-->
+            <label for="user">Benutzer</label>
+            <input type="text" name="user" id="user" placeholder="userName" minlength="8" maxlength="15">
+
+            <label for="user">Passwort</label>
+            <input type="password" name="pwd" id="pwd" placeholder="***" minlength="8" required>
+
+            <label for="age">Alter</label>
+            <input type="number" id="age" name="age" min="0" max="98" step="1">
+
+            <label for="incomming">Einkommen:</label>
+            <input type="range" id="einkommen" step="10">
+
+            <fieldset>
+                <legend>Gender</legend>
+                <label for="man">maskulin</label>
+                <input type="radio" name="gender" value="1">
+
+                <label for="woman">feminin</label>
+                <input type="radio" name="gender" value="2">
+
+                <label for="dovers">divers</label>
+                <input type="radio" name="gender" value="3">
+            </fieldset>
+
+            <fieldset>
+                <legend>Hobbies</legend>
+                <label for="soccer">Fußball</label>
+                <input type="checkbox" name="hobbies" value="1">
+
+                <label for="photo">Fotografie</label>
+                <input type="checkbox" name="hobbies" value="2">
+
+                <label for="hobbyhorsing">Hobby-Horsing</label>
+                <input type="checkbox" name="hobbies" value="3">
+            </fieldset>
+
+            <input type="submit" value="Login">
+        </form>
 
     <br><br><br>
     <h3>Navigation</h3>

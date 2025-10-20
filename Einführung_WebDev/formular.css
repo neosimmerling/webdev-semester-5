@@ -1,8 +1,32 @@
 form {
     display: flex;
     flex-direction: column;
+    width: max-content;
+    margin: 10px auto;
 }
 
-input {
+#formular input {
     width: 100px;
+    margin-bottom: 1.5em;
+    border-radius: 5px;
+}
+
+#formular input[type="radio"] {
+    width: min-content;
+    margin-right: 0.5em;
+}
+
+#formular input[type="checkbox"] {
+    width: min-content;
+    margin-right: 0.5em;
+}
+
+h1 {
+    width: max-content;
+    margin: 10px auto;
+}
+
+::placeholder {
+    color: violet;
+    font-weight: bold;
 }
