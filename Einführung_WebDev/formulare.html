@@ -26,50 +26,64 @@
             </datalist>
         </form>
 
-        <form action="" method="get" id="formular">   <!--get ist standard-->
+        <form action="" method="post" id="formular" enctype="multipart/form-data">   <!--methode get ist standard-->
             <label for="user">Benutzer</label>
-            <input type="text" name="user" id="user" placeholder="userName" minlength="8" maxlength="15">
+            <input type="text" name="user" id="user" placeholder="Benutzername" minlength="8" maxlength="15" required>
 
             <label for="user">Passwort</label>
-            <input type="password" name="pwd" id="pwd" placeholder="***" minlength="8" required>
+            <input type="password" name="pwd" id="pwd" placeholder="Passwort" minlength="8" required>
 
             <label for="age">Alter</label>
-            <input type="number" id="age" name="age" min="0" max="98" step="1">
+            <input type="number" id="age" name="age" min="0" max="98" step="1" placeholder="Alter" disabled>
 
             <label for="incomming">Einkommen:</label>
             <input type="range" id="einkommen" step="10">
 
-            <fieldset>
+            <fieldset class="column">
                 <legend>Gender</legend>
-                <label for="man">maskulin</label>
-                <input type="radio" name="gender" value="1">
-
-                <label for="woman">feminin</label>
-                <input type="radio" name="gender" value="2">
-
-                <label for="dovers">divers</label>
-                <input type="radio" name="gender" value="3">
+                <label for="man"><input type="radio" name="gender" value="1">maskulin</label>
+                <label for="woman"><input type="radio" name="gender" value="2">feminin</label>
+                <label for="dovers"><input type="radio" name="gender" value="3">divers</label>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="column">
                 <legend>Hobbies</legend>
-                <label for="soccer">Fußball</label>
-                <input type="checkbox" name="hobbies" value="1">
-
-                <label for="photo">Fotografie</label>
-                <input type="checkbox" name="hobbies" value="2">
-
-                <label for="hobbyhorsing">Hobby-Horsing</label>
-                <input type="checkbox" name="hobbies" value="3">
+                <label for="soccer"><input type="checkbox" name="hobbies" value="1">Fußball</label>
+                <label for="photo"><input type="checkbox" name="hobbies" value="2">Fotografie</label>
+                <label for="hobbyhorsing"><input type="checkbox" name="hobbies" value="3">Hobby-Horsing</label>
             </fieldset>
 
-            <input type="submit" value="Login">
+            <input type="hidden" name="id" value="123">
+
+            <label for="foto">Passbild:</label>
+            <input type="file" id="foto" name="foto" size="50" class="breiteFelder">
+
+            <label for="farbe">Lieblingsfarbe</label>
+            <input type="color" name="color" id="color">
+
+            <label for="Gebdate">Geburtsdatum</label>
+            <input type="date" name="Gebdate" id="Gebdate">
+
+            <label for="sprache">Sprachen</label>
+            <select name="sprache" id="sprache" multiple>
+                <option value="en">Englisch</option>
+                <option value="de">Deutsch</option>
+                <option value="esp">Spanisch</option>
+                <option value="ru">Russisch</option>
+            </select>
+
+            <input type="submit" value="bestätigen">
+            <input type="reset" value="löschen">
+            <input type="button" value="nicht klicken">
+            <input type="image" src="img/DHGE-logo-farbig.png" value="bestätigen"> <!-- automatisch submit-Button -->
+            <button type="button">ich kann nichts</button>
         </form>
 
     <br><br><br>
     <h3>Navigation</h3>
     <a href="halloPI23.html#p1-content-dhge">Hauptseite</a> <br>
     <a href="Image-Map.html">Karte Thüringens</a> <br>
+    <a href="formular2.html">Übung Formulare</a> <br>
     <br> <a href="#top" style="justify-content: center; display:flex">↑ back to top ↑</a>
 </body>
 </html>

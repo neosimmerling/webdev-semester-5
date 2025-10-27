@@ -30,3 +30,25 @@ h1 {
     color: violet;
     font-weight: bold;
 }
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column>input {
+    margin-top: 0 !important;
+}
+
+.breiteFelder {
+    color: aliceblue; /* geht irgendwie nicht */
+    width: 200px;
+}
+
+:disabled {
+    background-color: green;
+}
+
+select {
+    margin-bottom: 45px;
+}
