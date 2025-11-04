@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/smiley.ico"/>
+    <title>Grid 2</title>
+
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            background-color: black;
+            color: aliceblue;
+        }
+
+        header {
+            grid-column: 1 / -1;
+            grid-row: 2 / 3;
+            color: cadetblue;
+            background-color: lightblue;
+        }
+
+        main {
+            grid-column: 2 / span 2;    /* von Linie 2 über 2 Spalten */
+            grid-row: 1 / -1;   /* von gnaz oben bis ganz unten */
+            color: goldenrod;
+            background-color: lightgoldenrodyellow;
+        }
+
+        aside {
+            grid-column: 5 / -1;
+            grid-row: 1 / span 1;
+            color: limegreen;
+            background-color: lightgreen;
+        }
+
+        footer {
+            grid-column: 4 / -1;
+            grid-row: 4 / -1;
+            color: orange;
+            background-color: palegoldenrod;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.dhge.de" target="_blank" rel="noopener noreferrer">
+    </a>
+
+    <header>
+        <h1 style="color:greenyellow">Grid Nr. 2</h1> <br>
+    </header>
+    <main>
+        <section>
+            <h2>Kapitel 1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis 
+                repudiandae distinctio, natus maiores dolore odio fugit culpa beatae 
+                error, accusantium dolorem fugiat eius excepturi doloremque, corrupti 
+                ea. Esse, eveniet tenetur.
+            </p>
+        </section>
+    </main>
+    <aside>
+        <section>
+            <h2>Notiz 1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, aut dicta. 
+                Saepe molestias qui ex corporis reiciendis fugiat velit maxime.
+            </p>
+        </section>
+        <section>
+            <h2>Notiz 2</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, aut dicta.</p>
+        </section>
+    </aside>
+    <footer>
+        <address>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus, officia?
+        </address>
+        <br><br><br>
+    <h3>Navigation</h3>
+    <a href="halloPI23.html#p1-content-dhge">Hauptseite</a> <br>
+    <a href="grid.html">Grid</a> <br>
+    <a href="grid3.html">Grid 3</a> <br>
+    <a href="formular2.html">Übung Formulare</a> <br>
+    <br> <a href="#top" style="justify-content: center; display:flex">↑ back to top ↑</a>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/smiley.ico"/>
+    <title>Grid 3</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-areas: "head"
+                                 "nav"
+                                 "main"
+                                 "aside"
+                                 "foot";
+        }
+
+        header {
+            grid-area: head;
+            color: cadetblue;
+            background-color: lightblue;
+        }
+
+        nav {
+            grid-area: nav;
+        }
+
+        main {
+            grid-area: main;
+            color: goldenrod;
+            background-color: lightgoldenrodyellow;
+            height: 80vh;
+        }
+
+        aside {
+            grid-area: aside;
+            color: limegreen;
+            background-color: lightgreen;
+            
+        }
+
+        footer {
+            grid-area: foot;
+            color: orange;
+            background-color: palegoldenrod;
+        }
+
+        ul.menu {
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+        }
+
+        ul.menu>li {
+            padding-left: 15px; 
+        }
+
+        @media (min-width: 800px) {
+            body {
+                grid-template-areas: "head head head head"
+                                     "nav nav nav nav"
+                                     "main main main aside"
+                                     "main main main aside"
+                                     "foot foot foot foot";
+            }
+
+            aside {
+                margin-left: 1em;
+                padding: 1em;
+                border-radius: 1em;
+            }
+
+            nav {
+                box-shadow: 0px 5px 10px grey;
+                z-index: 5;
+            }
+        }
+    
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Überschrift</h1>
+    </header>
+    <nav>
+        <ul class="menu">
+            <li><a href="dings.htm">Produkte</a></li>
+            <li><a href="referenz.htm">Referenzen</a></li>
+            <li><a href="wir.htm">Über uns</a></li>
+            <li><a href="kerriere.htm">Karriere</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Kapitel 1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis 
+                repudiandae distinctio, natus maiores dolore odio fugit culpa beatae 
+                error, accusantium dolorem fugiat eius excepturi doloremque, corrupti 
+                ea. Esse, eveniet tenetur.
+            </p>
+        </section>
+    </main>
+    <aside>
+        <section>
+            <h2>Notiz 1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, aut dicta. 
+                Saepe molestias qui ex corporis reiciendis fugiat velit maxime.
+            </p>
+        </section>
+        <section>
+            <h2>Notiz 2</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, aut dicta.</p>
+        </section>
+    </aside>
+    <footer>
+        <address>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus, officia?
+        </address>
+        <br><br><br>
+    <h3>Navigation</h3>
+    <a href="halloPI23.html#p1-content-dhge">Hauptseite</a> <br>
+    <a href="grid.html">Grid 1</a> <br>
+    <a href="grid2.html">Grid 2</a> <br>
+    <br> <a href="#top" style="justify-content: center; display:flex">↑ back to top ↑</a>
+    </footer>
+</body>
+</html>

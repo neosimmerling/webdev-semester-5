@@ -1,0 +1,13 @@
+.griddd {
+    display: grid;
+    /* grid-template-columns: auto minmax(500px, 1000px) auto; */
+    grid-template-columns: 1fr 3fr 2fr;     /*   1/6 | 3/6 | 2/6   */ 
+    row-gap: 20px;
+    column-gap: 10px;
+}
+
+div {
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 5px;
+}
