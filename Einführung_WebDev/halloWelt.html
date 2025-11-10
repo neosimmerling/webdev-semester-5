@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="code.css"/>
     <link rel="icon" type="image/x-icon" href="img/smiley.ico"/>
     <title>Hallo Welt</title>
 
@@ -12,19 +13,34 @@
             background-color: lightgoldenrodyellow;
             color: red;
         }
+        table, th, td {
+            border: 1px solid;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
     </style>
 
-    <script>
+    <!-- <script>
         document.write("Hallo Welt!");
-    </script>
+    </script> -->
 
-    <script src="js/halloDu.js"></script>
+    <!-- <script src="js/log.js"></script>            Einbindung JS -->
+    <!-- <script src="js/alert.js"></script> -->
+    
 </head>
 <body>
     <a href="https://www.dhge.de" target="_blank" rel="noopener noreferrer">
         <img src="img/dhge-logo-sw.png" alt="DHGE Logo" class="logo">
     </a>
     <h1 style="color:greenyellow">Hallo Welt</h1>
+
+    <script src="js/strukturen.js"></script>
 
     <noscript>
         <p class="meldung">JavaScript ist kaputt (deaktiviert)</p>
@@ -33,11 +49,40 @@
     <script>
         document.write("Hallo Welt 2!");
     </script>
+
+    <pre><code>
+        'use strict';
+
+        let i = 0;
+
+        for (let i = 0; i < 5; i++) {
+            document.write("&lt;h2&gt;Hallöleeeee&lt;/h2&gt;");
+        }
+
+        while (i < 5) {
+            document.write("&lt;h2&gt;Hallooooo&lt;/h2&gt;");
+            document.write(`5&lt;sup&gt;${i}&lt;/sup&gt; = ${pow(5, i)}`);
+            i++;
+        }
+
+        do {
+            document.write("&lt;h2&gt;Huhuuuuu&lt;/h2&gt;");
+            i++;
+        } while (i < 5);
+
+        console.log("i: " + i);
+
+        function pow(basis, exponent) {
+            return basis ** exponent;
+        }
+
+    </code></pre>
     <br><br><br>
     <h3>Navigation</h3>
     <a href="halloPI23.html#p1-content-dhge">Hauptseite</a> <br>
     <a href="jsZeitproblem.html">Zeitproblem</a> <br>
-    <a href="formular2.html">Übung Formulare</a> <br>
+    <a href="elementAuswahlmitJS.html">Elementauswahl</a> <br>
+    <a href="bmi-Rechner.html">BMI</a> <br>
     <br> <a href="#top" style="justify-content: center; display:flex">↑ back to top ↑</a>
 </body>
 </html>
