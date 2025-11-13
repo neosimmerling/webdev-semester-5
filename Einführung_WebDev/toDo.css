@@ -1,0 +1,47 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#toDo-nebeneinander {
+    display: flex;
+    flex-direction: row;
+}
+
+input {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: large;
+    padding: 10px;
+}
+
+table {
+    border: 1px solid whitesmoke;
+}
+
+thead {
+    background-color: rgb(71, 71, 71);
+}
+
+[type=checkbox] {
+    margin: 5px;
+}
+
+th {
+    padding: 0.5em;
+}
+
+thead>tr>th:nth-child(2) {
+    min-width: 400px;
+}
+
+#toDoinput {
+    width: 500px;
+    font-size: large;
+    padding: 10px;
+}
+
+thead~tr:nth-child(even) {
+    background-color: rgb(160, 159, 159);
+}

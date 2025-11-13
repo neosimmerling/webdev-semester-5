@@ -4,42 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="bmi.css"/>
+    <link rel="stylesheet" href="toDo.css"/>
     <link rel="icon" type="image/x-icon" href="img/smiley.ico"/>
-    <title>BMI-Rechner</title>
-    <script src="js/bmi.js"></script>
-    <script src="js/forms.js"></script>
-    
+    <title>ToDo-List</title>
+    <script src="js/toDo.js"></script>
 </head>
 <body id="koerper">
     <a href="https://www.dhge.de" target="_blank" rel="noopener noreferrer">
         <img src="img/dhge-logo-sw.png" alt="DHGE Logo" class="logo">
     </a>
-    <h1 style="color:greenyellow">BMI-Rechner</h1><br><br>  
+    <h1 style="color:greenyellow">ToDo-List</h1><br><br>  
 
-    <form action="" id="formular">
-        <div class="fancy-label">
-        <label for="size" class="like-placeholder">Größe [cm]</label>
-        <input type="number" id="size">
+    <main>
+        <div id="toDo-nebeneinander">
+            <input type="text" id="toDoinput">
+            <input type="button" value=" + " id="addButton">
         </div>
-
-        <div class="fancy-label">
-        <label for="mass" class="like-placeholder">Gewicht [kg]</label>
-        <input type="number" id="mass">
-        </div>
-
-        <input type="button" value="berechnen" id="calcButton">
-
-        <label for="out">BMI</label>
-        <output id="out">Noch nicht berechnet</output>
-    </form>
+        <table id="toDoListe">
+            <thead>
+                <tr>
+                    <th>Nr.</th>
+                    <th>ToDo</th>
+                    <th>Done</th>
+                </tr>
+            </thead>
+        </table>
+    </main>
 
     <br><br><br>
     <h3>Navigation</h3>
     <a href="halloPI23.html#p1-content-dhge">Hauptseite</a> <br>
     <a href="jsZeitproblem.html">Zeitproblem</a> <br>
     <a href="elementAuswahlmitJS.html">Elementauswahl</a> <br>
-    <a href="todolist.html">ToDo-Liste</a> <br>
+    <a href="bmi-Rechner.html">BMI-Rechner</a> <br>
     <br> <a href="#top" style="justify-content: center; display:flex">↑ back to top ↑</a>
 </body>
 </html>

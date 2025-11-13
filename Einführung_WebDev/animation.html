@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" type="image/x-icon" href="img/smiley.ico"/>
+    <title>Animationen mit CSS</title>
+    <style>
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+        }
+
+        #rotation {
+            transition: all 0.3s ease;
+        }
+        
+        #rotation:hover {
+            /* transform: translate(100px, -100px); /* translate(x,y) */
+            /* /transform: scale(2); */
+            transform: rotate(360deg);
+        }
+
+        #item {
+            transition: all 0.3s ease;
+        }
+        
+        #item:hover {
+            transform: translate(100px, -100px); /* translate(x,y) */
+        }
+
+        #groesser {
+            transition: all 0.3s ease;
+        }
+        
+        #groesser:hover {
+            transform: scale(2);
+        }
+
+        #bewegtSich {
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            background-color: rgba(127, 255, 212, 0.598);
+            top: 0;
+            left: 0;
+            animation: movingBox 10s ease-in-out infinite;
+        }
+
+        @keyframes movingBox {
+            10% {
+                top: 100px;
+                left: 200px;
+            }
+            20% {
+                top: 500px;
+                left: 280px;
+            }
+            30% {
+                top: 150px;
+                left: 500px;
+            }
+            40% {
+                top: 500px;
+                left: 300px;
+            }
+            50% {
+                top: 350px;
+                left: 1000px;
+            }
+            60% {
+                top: 50px;
+                left: 550px;
+            }
+            70% {
+                top: 700px;
+                left: 100px;
+            }
+            80% {
+                top: 300px;
+                left: 300px;
+            }
+            90% {
+                top: 500px;
+                left: 1000px;
+            }
+            100% {
+                top: 600px;
+                left: 400px;
+            }
+        }
+    </style>
+</head>
+<body id="koerper">
+    <a href="https://www.dhge.de" target="_blank" rel="noopener noreferrer">
+        <img src="img/dhge-logo-sw.png" alt="DHGE Logo" class="logo">
+    </a>
+    <h1 style="color:greenyellow">Animationen mit CSS</h1><br><br>  
+
+    <div id="container">
+        <div id="item">
+            <h2>Hallo du da!</h2>
+        </div>
+        <div id="rotation">
+            <h2>Ich kann mich drehen :D</h2>
+        </div>
+        <div id="groesser">
+            <h2>Achtung Schreckgefahr</h2>
+        </div>
+        <div id="bewegtSich">
+        </div>
+    </div>
+
+    <br><br><br>
+    <h3>Navigation</h3>
+    <a href="halloPI23.html#p1-content-dhge">Hauptseite</a> <br>
+    <a href="jsZeitproblem.html">Zeitproblem</a> <br>
+    <a href="elementAuswahlmitJS.html">Elementauswahl</a> <br>
+    <br> <a href="#top" style="justify-content: center; display:flex">↑ back to top ↑</a>
+</body>
+</html>
